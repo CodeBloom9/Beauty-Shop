@@ -3,7 +3,7 @@
 A modern and responsive website for a beauty store, designed to showcase products, services, and promotions while providing a seamless user experience.
 
 ## Live Demo
-[View the live site](https://your-username.github.io/your-repo-name/)
+[View the live site](https://codebloom9.github.io/Beauty-Shop/)
 
 ## Features
 - Fully responsive design for desktop and mobile
