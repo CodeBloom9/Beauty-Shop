@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaute | Curated Beauty | Products Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; display: flex; flex-direction: column; min-height: 100vh; }
+        .logo-font { font-family: 'Pacifico', cursive; }
+        
+        /* Glassmorphism for the nav on scroll */
+        .nav-scrolled {
+            background: rgba(250, 221, 225, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Animations for future content */
+        .fade-in { animation: fadeIn 1.2s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-[#FADDE1] overflow-x-hidden relative text-[#9E0059]">
+
+    <div class="absolute -top-20 -left-20 w-64 h-64 bg-[#FF5D8F] rounded-full mix-blend-multiply filter blur-3xl opacity-20 z-0"></div>
+
+    <!--Navbar-->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="flex items-center justify-between px-6 md:px-12 py-5 max-w-7xl mx-auto">
+            <div class="logo-font text-3xl cursor-pointer">Beaute.</div>
+            
+            <div class="hidden md:flex space-x-10 font-medium">
+                <a href="index.html" class="hover:text-[#FF5D8F] transition-colors">Home</a>
+                <a href="about.html" class="hover:text-[#FF5D8F] transition-colors">About</a>
+                <a href="products.html" class="hover:text-[#FF5D8F] transition-colors">Products</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="contacts.html" class="bg-[#9E0059] text-white px-5 py-2 md:px-7 md:py-2.5 rounded-full font-semibold transition-all duration-300 border-2 border-[#9E0059] hover:bg-[#FF5D8F] hover:text-[#9E0059] hover:border-[#FF5D8F] text-sm md:text-base">
+                    Contact
+                </a>
+                <button id="menu-btn" class="md:hidden text-[#9E0059] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FADDE1] border-b border-[#FF5D8F]/20 px-6 py-6 space-y-4 shadow-xl">
+            <a href="index.html" class="block text-xl font-semibold">Home</a>
+            <a href="about.html" class="block text-xl font-semibold">About</a>
+            <a href="products.html" class="block text-xl font-semibold">Products</a>
+        </div>
+    </nav>
+
+    <!--Hero Section-->
+    <section class="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#FADDE1] via-[#fce7ea] to-[#FADDE1]">
+    
+    <div class="absolute -top-20 -left-20 w-64 h-64 md:w-96 md:h-96 bg-[#FF5D8F] opacity-20 blur-2xl animate-pulse" 
+         style="border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+    
+    <div class="absolute -bottom-20 -right-20 w-72 h-72 md:w-[30rem] md:h-[30rem] bg-[#9E0059] opacity-10 blur-3xl"
+         style="border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;"></div>
+
+    <div class="relative z-10 text-center px-6">
+
+        <h1 class="text-5xl md:text-7xl lg:text-6xl font-black tracking-tight leading-tight uppercase">
+            <span class="text-[#3B0A57]">Cur</span><span class="text-[#FF5D8F]">ated</span><br>
+            
+            <span class="text-[#FF5D8F]">Bea</span><span class="text-[#3B0A57]">uty</span><br>
+            
+            <span class="text-[#3B0A57]">Essen</span><span class="text-[#FF5D8F]">tials</span>
+        </h1>
+
+        <div class="mt-8 flex items-center justify-center gap-4">
+            <div class="h-[1px] w-12 bg-[#3B0A57]/20"></div>
+            <p class="text-[#3B0A57]/60 text-xs md:text-sm font-medium tracking-[0.2em] italic">
+                Defined by Quality. Driven by Glow.
+            </p>
+            <div class="h-[1px] w-12 bg-[#3B0A57]/20"></div>
+        </div>
+    </div>
+</section>
+
+<!--Products Themselves-->
+<section class="bg-[#FFFFFF] py-24 px-4">
+    <div class="max-w-[1600px] mx-auto"> <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+            
+            <div class="group bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-xl flex flex-col h-full border border-[#3B0A57]/5">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="/images/home-hero-image.jpg" alt="Luminous Elixir" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-end text-center">
+                    <h3 class="text-lg font-bold text-[#3B0A57] mb-1 leading-tight">Luminous Elixir</h3>
+                    <p class="text-[#3B0A57]/60 text-xs mb-4">Brightening oil.</p>
+                    <div class="flex flex-col gap-3 pt-3 border-t border-[#3B0A57]/5">
+                        <span class="text-lg font-black text-[#9E0059]">$54.00</span>
+                        <a href="contacts.html" class="w-full py-2 bg-[#3B0A57] text-white rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-[#FF5D8F] transition-colors">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-xl flex flex-col h-full border border-[#3B0A57]/5">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="/images/product-velvet-clenser.jpg" alt="Velvet Cleanser" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-end text-center">
+                    <h3 class="text-lg font-bold text-[#3B0A57] mb-1 leading-tight">Velvet Cleanser</h3>
+                    <p class="text-[#3B0A57]/60 text-xs mb-4">Maintain moisture.</p>
+                    <div class="flex flex-col gap-3 pt-3 border-t border-[#3B0A57]/5">
+                        <span class="text-lg font-black text-[#9E0059]">$32.00</span>
+                        <a href="contacts.html" class="w-full py-2 bg-[#3B0A57] text-white rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-[#FF5D8F] transition-colors">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-xl flex flex-col h-full border border-[#3B0A57]/5">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="/images/product-rose-repair-balm.jpg" alt="Rose Repair Balm" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-end text-center">
+                    <h3 class="text-lg font-bold text-[#3B0A57] mb-1 leading-tight text-nowrap">Rose Repair</h3>
+                    <p class="text-[#3B0A57]/60 text-xs mb-4">Dry skin recovery.</p>
+                    <div class="flex flex-col gap-3 pt-3 border-t border-[#3B0A57]/5">
+                        <span class="text-lg font-black text-[#9E0059]">$45.00</span>
+                        <a href="contacts.html" class="w-full py-2 bg-[#3B0A57] text-white rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-[#FF5D8F] transition-colors">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-xl flex flex-col h-full border border-[#3B0A57]/5">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="/images/product-hydra-mist 360.jpg" alt="Hydra-Mist" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-end text-center">
+                    <h3 class="text-lg font-bold text-[#3B0A57] mb-1 leading-tight">Hydra-Mist</h3>
+                    <p class="text-[#3B0A57]/60 text-xs mb-4">Hyaluronic acid.</p>
+                    <div class="flex flex-col gap-3 pt-3 border-t border-[#3B0A57]/5">
+                        <span class="text-lg font-black text-[#9E0059]">$28.00</span>
+                        <a href="contacts.html" class="w-full py-2 bg-[#3B0A57] text-white rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-[#FF5D8F] transition-colors">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-xl flex flex-col h-full border border-[#3B0A57]/5">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="/images/product-golden-glow-oil.jpg" alt="Golden Glow Oil" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-end text-center">
+                    <h3 class="text-lg font-bold text-[#3B0A57] mb-1 leading-tight">Golden Glow</h3>
+                    <p class="text-[#3B0A57]/60 text-xs mb-4">Sun-kissed look.</p>
+                    <div class="flex flex-col gap-3 pt-3 border-t border-[#3B0A57]/5">
+                        <span class="text-lg font-black text-[#9E0059]">$60.00</span>
+                        <a href="contacts.html" class="w-full py-2 bg-[#3B0A57] text-white rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-[#FF5D8F] transition-colors">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-xl flex flex-col h-full border border-[#3B0A57]/5">
+                <div class="aspect-[4/5] overflow-hidden">
+                    <img src="/images/product-sculpting-gua-sha.jpg" alt="Gua Sha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="p-5 flex flex-col flex-grow justify-end text-center">
+                    <h3 class="text-lg font-bold text-[#3B0A57] mb-1 leading-tight">Sculpting</h3>
+                    <p class="text-[#3B0A57]/60 text-xs mb-4">Natural jade tool.</p>
+                    <div class="flex flex-col gap-3 pt-3 border-t border-[#3B0A57]/5">
+                        <span class="text-lg font-black text-[#9E0059]">$25.00</span>
+                        <a href="contacts.html" class="w-full py-2 bg-[#3B0A57] text-white rounded-lg text-[9px] font-bold uppercase tracking-widest hover:bg-[#FF5D8F] transition-colors">Purchase</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+
+
+    <!--Footer-->
+    <footer class="bg-[#9E0059]/80 py-20 px-6 relative overflow-hidden mt-auto">
+        <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-[#FADDE1] opacity-5 rounded-full blur-3xl"></div>
+        <div class="absolute top-0 left-0 w-32 h-32 bg-[#FF5D8F] opacity-10" style="border-radius: 0 0 100% 0;"></div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 pb-16 border-b border-white/10 text-center md:text-left">
+                
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Navigation</h4>
+                    <nav class="flex flex-col space-y-4">
+                        <a href="index.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all text-sm">Home</a>
+                        <a href="about.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all text-sm">Our Philosophy</a>
+                        <a href="products.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all text-sm">Products</a>
+                        <a href="contacts.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all text-sm">Contact Us</a>
+                    </nav>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Get In Touch</h4>
+                    <div class="flex flex-col space-y-4 text-[#EADEDA] text-sm italic">
+                        <p>hello@beaute.com</p>
+                        <p>+1 (555) Glow-Up</p>
+                        <p class="leading-relaxed opacity-80">123 Aesthetic Blvd, <br> Suite 400, NY 10012</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Follow The Glow</h4>
+                    <div class="flex gap-6">
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#EADEDA] hover:bg-[#FF5D8F] hover:text-[#9E0059] transition-all duration-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#EADEDA] hover:bg-[#FF5D8F] hover:text-[#9E0059] transition-all duration-500">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.654 2.569-.992 3.992-.283 1.194.599 2.169 1.775 2.169 2.13 0 3.768-2.248 3.768-5.493 0-2.872-2.064-4.881-5.013-4.881-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.164 0 7.399 2.966 7.399 6.935 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.033-1.002 2.324-1.492 3.121 1.12.345 2.304.532 3.535.532 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#EADEDA] hover:bg-[#FF5D8F] hover:text-[#9E0059] transition-all duration-500">
+                            <span class="font-bold text-xs">Tik.</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="logo-font text-3xl text-white">Beaute.</div>
+                
+                <p class="text-[#EADEDA]/40 text-[10px] uppercase tracking-[0.3em] font-medium text-center">
+                    &copy; 2026 Beaute. All rights reserved. &bull; Curated With Intention
+                </p>
+                
+                <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white/40 hover:text-[#FF5D8F] transition-all text-xs flex items-center gap-2 group">
+                    Back To Top 
+                    <span class="group-hover:-translate-y-1 transition-transform">↑</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

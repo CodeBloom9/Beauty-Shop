@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beaute | Curated Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .logo-font { font-family: 'Pacifico', cursive; }
+        
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Glassmorphism for the nav on scroll */
+        .nav-scrolled {
+            background: rgba(250, 221, 225, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-[#FADDE1] min-h-screen overflow-x-hidden relative text-[#9E0059]">
+
+    <div class="absolute -top-20 -left-20 w-64 h-64 bg-[#FF5D8F] rounded-full mix-blend-multiply filter blur-3xl opacity-20 z-0"></div>
+    <div class="absolute top-10 left-10 w-24 h-24 md:w-32 md:h-32 bg-[#FF5D8F] z-0 opacity-40" style="border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="flex items-center justify-between px-6 md:px-12 py-5 max-w-7xl mx-auto">
+            <div class="logo-font text-3xl cursor-pointer">Beaute.</div>
+            
+            <div class="hidden md:flex space-x-10 font-medium">
+                <a href="index.html" class="hover:text-[#FF5D8F] transition-colors">Home</a>
+                <a href="about.html" class="hover:text-[#FF5D8F] transition-colors">About</a>
+                <a href="products.html" class="hover:text-[#FF5D8F] transition-colors">Products</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="contacts.html" class="bg-[#9E0059] text-white px-5 py-2 md:px-7 md:py-2.5 rounded-full font-semibold transition-all duration-300 border-2 border-[#9E0059] hover:bg-[#FF5D8F] hover:text-[#9E0059] hover:border-[#FF5D8F] text-sm md:text-base">
+                    Contact
+                </a>
+                <button id="menu-btn" class="md:hidden text-[#9E0059] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-[#FADDE1] border-b border-[#FF5D8F]/20 px-6 py-6 space-y-4 shadow-xl">
+            <a href="index.html" class="block text-xl font-semibold">Home</a>
+            <a href="about.html" class="block text-xl font-semibold">About</a>
+            <a href="products.html" class="block text-xl font-semibold">Products</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative z-10 max-w-7xl mx-auto px-6 pt-32 md:pt-48 pb-20">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="fade-in text-center md:text-left order-2 md:order-1">
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-6">
+                    Beauty, Curated <br class="hidden lg:block"> With <span class="italic font-light">Intention</span>
+                </h1>
+                <p class="text-base md:text-lg opacity-90 mb-10 max-w-md mx-auto md:mx-0 leading-relaxed">
+                    Discover authentic, carefully selected products designed to elevate your everyday confidence and glow.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+                    <a href="products.html" class="w-full sm:w-auto text-center bg-[#9E0059] text-white border-2 border-[#9E0059] px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-[#FF5D8F] hover:text-[#9E0059] hover:border-[#FF5D8F] shadow-lg shadow-[#9E0059]/20">
+                        See Our Collection
+                    </a>
+                    <a href="about.html" class="w-full sm:w-auto text-center bg-[#FF5D8F] text-[#9E0059] border-2 border-[#FF5D8F] px-8 py-4 rounded-xl font-bold transition-all duration-300 hover:bg-[#9E0059] hover:text-white hover:border-[#9E0059]">
+                        Learn Our Story
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center order-1 md:order-2">
+                <div class="absolute w-64 h-64 md:w-80 md:h-80 bg-[#FF5D8F] rounded-full filter blur-[70px] md:blur-[100px] opacity-40 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+                
+                <div class="floating relative z-10">
+                    <img src="/images/home-hero-image.jpg" 
+                         alt="Elixir de Banane" 
+                         class="rounded-3xl shadow-2xl w-72 md:w-full max-w-sm border-t border-l border-white/30">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Stats Section -->
+<section class="bg-[#9E0059] py-16 md:py-24 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-[#FF5D8F] opacity-10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-20">
+            
+            <div class="w-full lg:w-1/3 text-center lg:text-left">
+                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight">
+                    Can I trust <br class="hidden md:block"> this brand?
+                </h2>
+                <div class="h-1 w-20 bg-[#FF5D8F] mt-6 mx-auto lg:mx-0"></div>
+            </div>
+
+            <div class="w-full lg:w-2/3 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0">
+                
+                <div class="group flex flex-col items-center lg:items-start md:px-8 transition-transform duration-300 hover:-translate-y-2">
+                    <span class="text-white mb-2">✔</span>
+                    <div class="text-4xl md:text-5xl font-bold text-[#FF5D8F] mb-2">500+</div>
+                    <div class="text-xs md:text-sm uppercase tracking-widest text-[#EADEDA] font-medium text-center lg:text-left">
+                        Happy Clients
+                    </div>
+                </div>
+
+                <div class="group flex flex-col items-center lg:items-start md:px-8 md:border-l border-[#EADEDA]/20 transition-transform duration-300 hover:-translate-y-2">
+                    <span class="text-white mb-2">✔</span>
+                    <div class="text-4xl md:text-5xl font-bold text-[#FF5D8F] mb-2">100%</div>
+                    <div class="text-xs md:text-sm uppercase tracking-widest text-[#EADEDA] font-medium text-center lg:text-left">
+                        Authentic Products
+                    </div>
+                </div>
+
+                <div class="group flex flex-col items-center lg:items-start md:px-8 md:border-l border-[#EADEDA]/20 transition-transform duration-300 hover:-translate-y-2">
+                    <span class="text-white mb-2">✔</span>
+                    <div class="text-4xl md:text-5xl font-bold text-[#FF5D8F] mb-2">50+</div>
+                    <div class="text-xs md:text-sm uppercase tracking-widest text-[#EADEDA] font-medium text-center lg:text-left">
+                        Beauty Essentials
+                    </div>
+                </div>
+
+                <div class="group flex flex-col items-center lg:items-start md:px-8 md:border-l border-[#EADEDA]/20 transition-transform duration-300 hover:-translate-y-2">
+                    <span class="text-white mb-2">✔</span>
+                    <div class="text-4xl md:text-5xl font-bold text-[#FF5D8F] mb-2">3 Years</div>
+                    <div class="text-xs md:text-sm uppercase tracking-widest text-[#EADEDA] font-medium text-center lg:text-left">
+                        Serving Our Community
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--We've Been Her Before Section-->
+<section class="bg-[#FADDE1] py-20 md:py-32 relative overflow-hidden">
+    
+    <div class="absolute -top-10 -right-20 w-80 h-80 bg-[#9E0059] opacity-10 rounded-full blur-[100px] z-0"></div>
+    <div class="absolute bottom-20 left-10 w-40 h-40 bg-[#9E0059] opacity-5 z-0" style="border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;"></div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
+            
+            <div class="order-2 md:order-1">
+                <div class="flex items-center gap-5 mb-8">
+                    <div class="w-[2px] h-14 bg-[#9E0059]"></div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-[#9E0059] leading-tight">
+                        We’ve All <br> Been There
+                    </h2>
+                </div>
+
+                <p class="text-lg text-[#9E0059] opacity-80 mb-10 leading-relaxed max-w-md">
+                    The frustration of products that don't deliver, the clutter of a drawer full of "maybe next times," and the search for a glow that feels authentic to you.
+                </p>
+
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#9E0059]/20 flex items-center justify-center mt-1 transition-transform hover:scale-110">
+                            <svg class="w-4 h-4 text-[#9E0059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <p class="text-[#9E0059] font-medium leading-relaxed">Wasting money on "viral" trends that irritate your skin.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#9E0059]/20 flex items-center justify-center mt-1 transition-transform hover:scale-110">
+                            <svg class="w-4 h-4 text-[#9E0059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <p class="text-[#9E0059] font-medium leading-relaxed">Feeling overwhelmed by 10-step routines that take too long.</p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#9E0059]/20 flex items-center justify-center mt-1 transition-transform hover:scale-110">
+                            <svg class="w-4 h-4 text-[#9E0059]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </div>
+                        <p class="text-[#9E0059] font-medium leading-relaxed">Settling for low-quality ingredients that lack intention.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="order-1 md:order-2 relative">
+                <div class="relative p-2 border border-[#9E0059]/10 rounded-2xl">
+                    <img src="/images/home-image-2.jpg" 
+                         alt="Frustrated customer or messy table" 
+                         class="rounded-xl shadow-lg w-full h-[350px] md:h-[500px] object-cover grayscale-[20%] opacity-90 transition-all duration-500 hover:grayscale-0 hover:opacity-100">
+                </div>
+                
+                <div class="absolute -bottom-6 -right-6 md:right-10 bg-white/40 backdrop-blur-md px-6 py-4 rounded-lg shadow-sm hidden sm:block border border-white/20">
+                    <span class="text-[#9E0059] font-medium italic text-sm">Routine Fatigue is real.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!--Why We Exist Section-->
+<section class="bg-[#FFFFFF] py-20 md:py-32 px-6">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#9E0059] mb-4">Why We Exist</h2>
+            <div class="h-1 w-24 bg-[#FF5D8F] mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-white/60 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/40 group">
+                <div class="w-14 h-14 bg-[#9E0059] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#9E0059]/20 group-hover:bg-[#FF5D8F] transition-colors">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.143-7.714L1 12l6.857-2.143L11 3z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#9E0059] mb-3">Carefully Selected</h3>
+                <p class="text-[#9E0059]/80 leading-relaxed text-sm">
+                    Every product in our shop undergoes a rigorous vetting process to ensure it meets our high standards.
+                </p>
+            </div>
+
+            <div class="bg-white/60 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/40 group">
+                <div class="w-14 h-14 bg-[#9E0059] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#9E0059]/20 group-hover:bg-[#FF5D8F] transition-colors">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#9E0059] mb-3">Authentic Brands</h3>
+                <p class="text-[#9E0059]/80 leading-relaxed text-sm">
+                    We partner directly with creators to guarantee 100% authenticity for every serum, cream, and tool.
+                </p>
+            </div>
+
+            <div class="bg-white/60 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/40 group">
+                <div class="w-14 h-14 bg-[#9E0059] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#9E0059]/20 group-hover:bg-[#FF5D8F] transition-colors">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#9E0059] mb-3">Affordable Luxury</h3>
+                <p class="text-[#9E0059]/80 leading-relaxed text-sm">
+                    Premium beauty shouldn't be out of reach. We curate the best results without the inflated price tags.
+                </p>
+            </div>
+
+            <div class="bg-white/60 p-8 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 border border-white/40 group">
+                <div class="w-14 h-14 bg-[#9E0059] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#9E0059]/20 group-hover:bg-[#FF5D8F] transition-colors">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                </div>
+                <h3 class="text-xl font-bold text-[#9E0059] mb-3">Community Trusted</h3>
+                <p class="text-[#9E0059]/80 leading-relaxed text-sm">
+                    Join thousands of women who have simplified their routine and rediscovered their natural glow.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Best Selling Products-->
+<section class="bg-[#FADDE1] py-24 overflow-hidden relative">
+    
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#9E0059] opacity-5 rounded-full blur-[120px] z-0"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#9E0059] mb-4">Best Selling Products</h2>
+            <p class="text-[#9E0059]/70 uppercase tracking-widest text-xs font-bold">Our Community Favorites</p>
+        </div>
+
+        <div class="overflow-hidden">
+            <div id="product-slider" class="flex transition-transform duration-1000 ease-in-out gap-6">
+                
+                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="aspect-[4/5] bg-white/20 rounded-2xl mb-6 overflow-hidden">
+                        <img src="/images/home-hero-image.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold text-[#9E0059] mb-2">Luminous Elixir</h3>
+                    <p class="text-[#9E0059]/70 text-sm mb-4">A lightweight brightening oil for all skin types.</p>
+                    <div class="text-lg font-bold text-[#9E0059]">$54.00</div>
+                </div>
+
+                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="aspect-[4/5] bg-white/20 rounded-2xl mb-6 overflow-hidden">
+                        <img src="/images/product-velvet-clenser.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold text-[#9E0059] mb-2">Velvet Cleanser</h3>
+                    <p class="text-[#9E0059]/70 text-sm mb-4">Gently removes impurities while maintaining moisture.</p>
+                    <div class="text-lg font-bold text-[#9E0059]">$32.00</div>
+                </div>
+
+                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="aspect-[4/5] bg-white/20 rounded-2xl mb-6 overflow-hidden">
+                        <img src="/images/product-rose-repair-balm.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold text-[#9E0059] mb-2">Rose Repair Balm</h3>
+                    <p class="text-[#9E0059]/70 text-sm mb-4">Intensive nighttime recovery for dry or sensitive skin.</p>
+                    <div class="text-lg font-bold text-[#9E0059]">$45.00</div>
+                </div>
+
+                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="aspect-[4/5] bg-white/20 rounded-2xl mb-6 overflow-hidden">
+                        <img src="/images/product-hydra-mist 360.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold text-[#9E0059] mb-2">Hydra-Mist 360</h3>
+                    <p class="text-[#9E0059]/70 text-sm mb-4">Instant hydration boost with hyaluronic acid.</p>
+                    <div class="text-lg font-bold text-[#9E0059]">$28.00</div>
+                </div>
+
+                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="aspect-[4/5] bg-white/20 rounded-2xl mb-6 overflow-hidden">
+                        <img src="/images/product-golden-glow-oil.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold text-[#9E0059] mb-2">Golden Glow Oil</h3>
+                    <p class="text-[#9E0059]/70 text-sm mb-4">Ethically sourced oils for a 24-hour sun-kissed look.</p>
+                    <div class="text-lg font-bold text-[#9E0059]">$60.00</div>
+                </div>
+
+                <div class="min-w-full md:min-w-[calc(33.333%-16px)] bg-white/40 backdrop-blur-md border border-white/60 p-6 rounded-[2rem] shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group">
+                    <div class="aspect-[4/5] bg-white/20 rounded-2xl mb-6 overflow-hidden">
+                        <img src="/images/product-sculpting-gua-sha.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <h3 class="text-xl font-bold text-[#9E0059] mb-2">Sculpting Gua Sha</h3>
+                    <p class="text-[#9E0059]/70 text-sm mb-4">Natural jade tool designed to lift and de-puff.</p>
+                    <div class="text-lg font-bold text-[#9E0059]">$25.00</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="flex justify-center gap-3 mt-12" id="dot-container">
+            </div>
+
+        <div class="text-center mt-12">
+            <a href="products.html" class="inline-block bg-[#9E0059] text-white font-bold px-12 py-4 rounded-full hover:bg-[#FF5D8F] hover:text-[#9E0059] transition-all duration-300 shadow-lg shadow-[#9E0059]/20">
+                View More Products
+            </a>
+        </div>
+    </div>
+</section>
+
+<!--Footer-->
+<footer class="bg-[#9E0059]/80 py-20 px-6 relative overflow-hidden">
+    
+    <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-[#FADDE1] opacity-5 rounded-full blur-3xl"></div>
+    <div class="absolute top-0 left-0 w-32 h-32 bg-[#FF5D8F] opacity-10" style="border-radius: 0 0 100% 0;"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 pb-16 border-b border-white/10 text-center md:text-left">
+            
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Navigation</h4>
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all duration-300 text-sm">Home</a>
+                    <a href="about.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all duration-300 text-sm">Our Philosophy</a>
+                    <a href="products.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all duration-300 text-sm">Products</a>
+                    <a href="contacts.html" class="text-[#EADEDA] hover:text-[#FF5D8F] transition-all duration-300 text-sm">Contact Us</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Get In Touch</h4>
+                <div class="flex flex-col space-y-4 text-[#EADEDA] text-sm italic">
+                    <p class="hover:text-white transition-colors cursor-pointer">hello@beaute.com</p>
+                    <p class="hover:text-white transition-colors cursor-pointer">+1 (555) Glow-Up</p>
+                    <p class="leading-relaxed opacity-80">123 Aesthetic Blvd, <br> Suite 400, NY 10012</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white font-bold uppercase tracking-[0.2em] text-xs mb-8">Follow The Glow</h4>
+                <div class="flex gap-6">
+                    <a href="https://www.instagram.com/beaute" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#EADEDA] hover:bg-[#FF5D8F] hover:text-[#9E0059] hover:border-[#FF5D8F] transition-all duration-500 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    </a>
+                    <a href="https://www.pinterest.com/beaute" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#EADEDA] hover:bg-[#FF5D8F] hover:text-[#9E0059] hover:border-[#FF5D8F] transition-all duration-500 shadow-lg">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.017 0c-6.627 0-12 5.373-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.654 2.569-.992 3.992-.283 1.194.599 2.169 1.775 2.169 2.13 0 3.768-2.248 3.768-5.493 0-2.872-2.064-4.881-5.013-4.881-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.261 7.929-7.261 4.164 0 7.399 2.966 7.399 6.935 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.033-1.002 2.324-1.492 3.121 1.12.345 2.304.532 3.535.532 6.627 0 12-5.373 12-12s-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@beaute" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-[#EADEDA] hover:bg-[#FF5D8F] hover:text-[#9E0059] hover:border-[#FF5D8F] transition-all duration-500 shadow-lg">
+                        <span class="font-bold text-xs">Tik.</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="logo-font text-3xl text-white">Beaute.</div>
+            
+            <p class="text-[#EADEDA]/40 text-[10px] uppercase tracking-[0.3em] font-medium text-center">
+                &copy; 2026 Beaute. All rights reserved. &bull; Curated With Intention &bull; Built with Love
+            </p>
+            
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-white/40 hover:text-[#FF5D8F] transition-all text-xs flex items-center gap-2 group">
+                Back To Top 
+                <span class="group-hover:-translate-y-1 transition-transform">↑</span>
+            </button>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const btn = document.getElementById('menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Carousel functionality
+        const slider = document.getElementById('product-slider');
+    const dotContainer = document.getElementById('dot-container');
+    const totalProducts = 6;
+    let index = 0;
+
+    // Calculate steps: On mobile 6 dots, on desktop 2 dots (sliding 3 at a time)
+    function setupCarousel() {
+        const isMobile = window.innerWidth < 768;
+        const dotsNeeded = isMobile ? 6 : 2;
+        dotContainer.innerHTML = '';
+        
+        for (let i = 0; i < dotsNeeded; i++) {
+            const dot = document.createElement('div');
+            dot.className = `h-3 rounded-full transition-all duration-500 cursor-pointer ${i === 0 ? 'w-8 bg-[#9E0059]' : 'w-3 bg-[#9E0059]/30'}`;
+            dot.addEventListener('click', () => { index = i; moveSlider(); });
+            dotContainer.appendChild(dot);
+        }
+    }
+
+    function moveSlider() {
+        const isMobile = window.innerWidth < 768;
+        const percentage = isMobile ? (index * 100) : (index * 100); 
+        // In desktop mode, we shift by 100% of the container to show the next 3
+        slider.style.transform = `translateX(calc(-${percentage}% - ${index * 24}px))`;
+        
+        // Update dots
+        Array.from(dotContainer.children).forEach((dot, i) => {
+            if(i === index) {
+                dot.classList.replace('w-3', 'w-8');
+                dot.classList.replace('bg-[#9E0059]/30', 'bg-[#9E0059]');
+            } else {
+                dot.classList.replace('w-8', 'w-3');
+                dot.classList.replace('bg-[#9E0059]', 'bg-[#9E0059]/30');
+            }
+        });
+    }
+
+    // Auto-slide
+    setInterval(() => {
+        const isMobile = window.innerWidth < 768;
+        const maxIndex = isMobile ? 5 : 1;
+        index = index >= maxIndex ? 0 : index + 1;
+        moveSlider();
+    }, 5000);
+
+    window.addEventListener('resize', setupCarousel);
+    setupCarousel();
+    </script>
+</body>
+</html>
